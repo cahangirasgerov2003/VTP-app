@@ -1,0 +1,12 @@
+form label {
+  color: rgb(106, 148, 38);
+  font-size: 17px;
+}
+
+form input,
+form input::placeholder,
+form textarea,
+form select {
+  color: rgb(58, 141, 137) !important;
+  font-size: 16px;
+}
