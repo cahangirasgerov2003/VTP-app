@@ -1,0 +1,9 @@
+.addUser {
+  text-decoration: none;
+  padding: 6px 20px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+.addUser:hover {
+  background-color: var(--secondary);
+}

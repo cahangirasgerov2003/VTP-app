@@ -1,0 +1,9 @@
+.notFound {
+  display: flex;
+  justify-content: center;
+}
+.notFound p {
+  color: var(--secondary);
+  font-size: 24px;
+  margin-bottom: 0;
+}

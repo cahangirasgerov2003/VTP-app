@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
+:root {
+  --primary: #88157e;
+  --secondary: #e16a00;
+}
+
+* {
+  box-sizing: border-box;
+  color: #fff;
+}
+
+a {
+  color: #fff !important;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: var(--primary);
+  font-size: 20px;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 30px;
+}
