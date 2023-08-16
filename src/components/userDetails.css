@@ -1,0 +1,31 @@
+.userDetails h5,
+.userDetails p,
+.userDetails li {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  margin: 10px 0;
+  color: rgb(96, 238, 107);
+}
+
+.deleteEdit a,
+.deleteEdit button {
+  text-decoration: none;
+  padding: 6px 20px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.deleteEdit button {
+  background-color: transparent;
+}
+
+.deleteEdit a:hover,
+.deleteEdit button:hover {
+  background-color: var(--secondary);
+}
+
+.deleteEdit {
+  margin-right: 50px;
+}

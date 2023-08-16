@@ -21,7 +21,7 @@ export const addUserToDb = (newUser = {}) => {
       picture,
     } = newUser;
     database
-      .ref("users/" + department)
+      .ref("users")
       .push({
         name,
         surName,
@@ -54,15 +54,33 @@ export const pushStore = (users) => {
 export const pullDb = () => {
   return async (dispatch) => {
     const snapshot = await database.ref("users").once("value");
-    console.log(snapshot);
-    console.log(snapshot.val());
-    const users = [];
-    snapshot.forEach((blog) => {
-      users.push({
-        id: blog.key,
-        ...blog.val(),
+    const allUsers = [];
+    snapshot.forEach((users) => {
+      allUsers.push({
+        id: users.key,
+        ...users.val(),
       });
     });
-    dispatch(pushStore(users));
+    dispatch(pushStore(allUsers));
+  };
+};
+
+// ACTIONS CREATER
+
+export const deleteUser = (id) => {
+  return {
+    type: "DELETE_USER",
+    id,
+  };
+};
+
+export const deleteDb = (id) => {
+  return async (dispatch) => {
+    try {
+      await database.ref(`users/${id}`).remove();
+      dispatch(deleteUser(id));
+    } catch (e) {
+      console.log("Error : ", e);
+    }
   };
 };

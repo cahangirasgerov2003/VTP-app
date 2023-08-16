@@ -24,3 +24,12 @@ body {
 h1 {
   font-size: 30px;
 }
+
+h5 {
+  font-size: 16px;
+}
+
+p {
+  font-size: 14px;
+  color: rgb(97, 161, 32);
+}
