@@ -15,13 +15,13 @@ const Users = (props) => {
           margin: "auto",
         }}
       ></img>
-      <div className="card-body cardBG mt-2 rounded">
+      <div className="card-body cardBG mt-2 rounded text-center">
         <h5 className="card-title">Name : {props.user.name}</h5>
         <h5 className="card-title">Surname : {props.user.surName}</h5>
         <p>{props.user.department}</p>
         <Link
-          to={`/members/${props.user.id}`}
-          className="btn btn-success text-white"
+          to={`${props.user.id}`}
+          className="btn btn-success text-white w-100"
         >
           User Details
         </Link>

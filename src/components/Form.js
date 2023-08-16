@@ -6,14 +6,16 @@ class Form extends Component {
     super(props);
 
     this.state = {
-      name: "",
-      surName: "",
-      email: "",
-      age: "",
-      university: "",
-      department: "",
-      interests: [],
-      picture: "",
+      name: props.user ? props.user.name : "Cahangir",
+      surName: props.user ? props.user.surName : "Asgerov",
+      email: props.user ? props.user.email : "cahangirAsgerov22@gmail.com",
+      age: props.user ? props.user.age : "21",
+      university: props.user ? props.user.university : "ADNSU",
+      department: props.user ? props.user.department : "Web proqramlaşdırma",
+      interests: props.user ? props.user.interests : [],
+      picture: props.user
+        ? props.user.picture
+        : "https://cdn.iconscout.com/icon/free/png-256/free-avatar-370-456322.png?f=webp",
       error: "",
     };
   }
@@ -25,7 +27,6 @@ class Form extends Component {
       this.state.surName.trim() &&
       this.state.email.trim() &&
       this.state.university.trim() &&
-      this.state.department.trim() &&
       Number(this.state.age) > 18 &&
       this.state.interests.length > 0 &&
       this.state.picture.trim()
@@ -40,7 +41,7 @@ class Form extends Component {
         email: this.state.email,
         age: this.state.age,
         university: this.state.university,
-        department: this.state.department,
+        department: this.state.department || "İnşaat Mühəndisliyi",
         picture: this.state.picture,
         interests: this.state.interests,
       });
@@ -82,7 +83,7 @@ class Form extends Component {
               className="form-control"
               type="text"
               name="nameUser"
-              defaultValue="Cahangir"
+              defaultValue={this.state.name}
               onChange={(e) => {
                 this.setState({
                   name: e.target.value,
@@ -99,7 +100,7 @@ class Form extends Component {
               className="form-control"
               type="text"
               name="surName"
-              defaultValue="Asgerov"
+              defaultValue={this.state.surName}
               onChange={(e) => {
                 this.setState({
                   surName: e.target.value,
@@ -116,7 +117,7 @@ class Form extends Component {
               className="form-control"
               type="email"
               name="userEmail"
-              defaultValue="asgerovCahangir@gmail.com"
+              defaultValue={this.state.email}
               onChange={(e) => {
                 this.setState({
                   email: e.target.value,
@@ -133,7 +134,7 @@ class Form extends Component {
               className="form-control"
               type="number"
               name="userAge"
-              defaultValue="21"
+              defaultValue={this.state.age}
               onChange={(e) => {
                 this.setState({
                   age: e.target.value,
@@ -150,7 +151,7 @@ class Form extends Component {
               className="form-control"
               type="text"
               name="university"
-              defaultValue="ADNSU"
+              defaultValue={this.state.university}
               onChange={(e) => {
                 this.setState({
                   university: e.target.value,
@@ -169,7 +170,7 @@ class Form extends Component {
               className="form-select"
               name="department"
               id="department"
-              defaultValue="İnşaat Mühəndisliyi"
+              defaultValue={this.state.department}
               onChange={(e) => {
                 this.setState({
                   department: e.target.value,
@@ -229,7 +230,7 @@ class Form extends Component {
               className="form-control"
               type="text"
               name="picture"
-              defaultValue="https://"
+              defaultValue={this.state.picture}
               onChange={(e) => {
                 this.setState({
                   picture: e.target.value,

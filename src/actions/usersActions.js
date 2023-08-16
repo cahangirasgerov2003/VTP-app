@@ -84,3 +84,24 @@ export const deleteDb = (id) => {
     }
   };
 };
+
+// ACTIONS CREATER
+
+export const updateUser = (id, updateData) => {
+  return {
+    type: "UPDATE_USER",
+    id,
+    updateData,
+  };
+};
+
+export const updateDb = (id, updateData) => {
+  return async (dispatch) => {
+    try {
+      await database.ref(`users/${id}`).update(updateData);
+      dispatch(updateUser(id, updateData));
+    } catch (e) {
+      console.log("Error : ", e);
+    }
+  };
+};

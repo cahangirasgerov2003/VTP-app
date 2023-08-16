@@ -9,6 +9,7 @@ import Departments from "./Departments";
 import NotFound from "./NotFound";
 import Create from "./Create";
 import UserDetails from "./UserDetails";
+import Edit from "./Edit";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -29,6 +30,10 @@ const App = () => {
           element: <Create />,
         },
         {
+          path: "/members/edit/:id",
+          element: <Edit />,
+        },
+        {
           path: "/members/:id",
           element: <UserDetails />,
         },
@@ -39,6 +44,14 @@ const App = () => {
         {
           path: "/departments",
           element: <Departments />,
+        },
+        {
+          path: "/departments/edit/:id",
+          element: <Edit />,
+        },
+        {
+          path: "/departments/:id",
+          element: <UserDetails />,
         },
         {
           path: "*",

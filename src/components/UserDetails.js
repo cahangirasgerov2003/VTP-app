@@ -1,13 +1,19 @@
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import "./userDetails.css";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { deleteDb } from "../actions/usersActions";
 
 const UserDetails = (props) => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
+  const [pathName, setPathName] = useState(null);
+
+  useEffect(() => {
+    setPathName(location.pathname.split("/")[1]);
+  }, [location]);
 
   const selectedUser = props.users.find((user) => {
     return user.id === id;
@@ -38,15 +44,15 @@ const UserDetails = (props) => {
           </ul>
         </div>
         <div className="d-flex flex-column deleteEdit">
-          <Link to="/members">
+          <Link to={`/${pathName}`}>
             Back <i className="fa-solid fa-backward"></i>
           </Link>
-          <button type="button">Edit user info</button>
+          <Link to={`/${pathName}/edit/${id}`}>Edit user info</Link>
           <button
             type="button"
             onClick={() => {
               props.dispatch(deleteDb(id)).then(() => {
-                navigate("/members");
+                navigate(`/${pathName}`);
               });
             }}
           >

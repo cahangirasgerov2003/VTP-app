@@ -1,7 +1,6 @@
 const usersState = [];
 
 const usersReducer = (state = usersState, action) => {
-  console.log(state);
   switch (action.type) {
     case "ADD_USER":
       return [...state, action.user];
@@ -11,6 +10,10 @@ const usersReducer = (state = usersState, action) => {
       });
     case "PUSH_STORE":
       return action.users;
+    case "UPDATE_USER":
+      return state.map((user) => {
+        return user.id !== action.id ? user : { ...user, ...action.updateData };
+      });
     default:
       return state;
   }
