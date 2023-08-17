@@ -12,6 +12,7 @@ const MainLayout = () => {
           <NavLink to="/members">Members</NavLink>
           <NavLink to="/events">Events</NavLink>
           <NavLink to="/departments">Departments</NavLink>
+          <NavLink to="/login">Login</NavLink>
         </nav>
       </header>
       <main className="mainContainer">

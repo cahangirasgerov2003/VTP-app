@@ -189,6 +189,12 @@ class Form extends Component {
               <option className="text-dark" value="İnşaat Mühəndisliyi">
                 İnşaat Mühəndisliyi
               </option>
+              <option className="text-dark" value="Mühasibatlıq">
+                Mühasibatlıq
+              </option>
+              <option className="text-dark" value="Logistika">
+                Logistika
+              </option>
             </select>
           </div>
 

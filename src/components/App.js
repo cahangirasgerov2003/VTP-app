@@ -13,6 +13,7 @@ import Edit from "./Edit";
 import SearchResult from "./SearchResult";
 import CreateEvent from "./CreateEvent";
 import SeeEvent from "./SeeEvent";
+import Login from "./Login";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -69,6 +70,10 @@ const App = () => {
         {
           path: "/search",
           element: <SearchResult />,
+        },
+        {
+          path: "/login",
+          element: <Login />,
         },
         {
           path: "*",

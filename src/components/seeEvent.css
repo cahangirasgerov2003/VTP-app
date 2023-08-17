@@ -11,3 +11,14 @@ ol li {
   border-radius: 10px;
   box-shadow: 1px 0.5px 10px red;
 }
+
+ol li h1 {
+  font-weight: bold;
+  color: rgb(194, 46, 46);
+  font-size: 24px;
+}
+
+ol li p {
+  font-size: 22px;
+  color: rgb(173, 192, 192);
+}

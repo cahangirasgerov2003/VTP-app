@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import "./firebase/configFirebase";
 import LoaderPage from "./components/LoaderPage";
 import { pullDb } from "./actions/usersActions";
+import { pullDbEvent } from "./actions/eventsActions";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -19,11 +20,18 @@ root.render(
 store
   .dispatch(pullDb())
   .then(() => {
-    root.render(
-      <Provider store={store}>
-        <App />
-      </Provider>
-    );
+    store
+      .dispatch(pullDbEvent())
+      .then(() => {
+        root.render(
+          <Provider store={store}>
+            <App />
+          </Provider>
+        );
+      })
+      .catch((e) => {
+        alert(`Error : ${e}`);
+      });
   })
   .catch((e) => {
     alert(`Error : ${e}`);

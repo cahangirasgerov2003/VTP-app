@@ -1,32 +1,33 @@
+import { connect } from "react-redux";
 import "./seeEvent.css";
 import React from "react";
 
-const SeeEvent = () => {
+const SeeEvent = (props) => {
   return (
     <div className="see">
       <h3>Information about the events is here &#128526;</h3>
       <ol>
-        <li className="seeEvent">
-          1...Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-          Delectus, a nemo iure optio praesentium vitae reprehenderit quis
-          cupiditate impedit quo odit! In, rerum eaque vel architecto
-          consequatur quidem laboriosam excepturi.
-        </li>
-        <li className="seeEvent">
-          2...Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-          Delectus, a nemo iure optio praesentium vitae reprehenderit quis
-          cupiditate impedit quo odit! In, rerum eaque vel architecto
-          consequatur quidem laboriosam excepturi.
-        </li>
-        <li className="seeEvent">
-          3...Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-          Delectus, a nemo iure optio praesentium vitae reprehenderit quis
-          cupiditate impedit quo odit! In, rerum eaque vel architecto
-          consequatur quidem laboriosam excepturi.
-        </li>
+        {props.events.map((event) => {
+          return (
+            <li key={event.id} className="seeEvent">
+              <h1>Event Name : {event.eventName}</h1>
+              <p>Event Description : {event.eventDesc}</p>
+              <p>
+                Event DeadLine : {event.eventDeadLine}{" "}
+                <i className="fa-regular fa-clock fa-spin fa-xl ms-3"></i>{" "}
+              </p>
+            </li>
+          );
+        })}
       </ol>
     </div>
   );
 };
 
-export default SeeEvent;
+const mapStateToProps = (state) => {
+  return {
+    events: state.events,
+  };
+};
+
+export default connect(mapStateToProps)(SeeEvent);

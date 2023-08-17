@@ -16,6 +16,12 @@ const Departments = (props) => {
   const Im = props.users.filter((user) => {
     return user.department === "İnşaat Mühəndisliyi";
   });
+  const Mu = props.users.filter((user) => {
+    return user.department === "Mühasibatlıq";
+  });
+  const Lo = props.users.filter((user) => {
+    return user.department === "Logistika";
+  });
   return (
     <div>
       <div className="d-flex justify-content-between align-items-center">
@@ -64,13 +70,39 @@ const Departments = (props) => {
           </p>
         )}
       </div>
+
+      <h2 className="h4 text-success">5) Mühasibatlıq :</h2>
+      <div className="row mt-4">
+        {Mu.length > 0 ? (
+          Mu.map((user) => {
+            return <Users user={user} key={user.id} />;
+          })
+        ) : (
+          <p className="text-danger h5">
+            There are no users belonging to this department!
+          </p>
+        )}
+      </div>
+
+      <h2 className="h4 text-success">6) Logistika :</h2>
+      <div className="row mt-4">
+        {Lo.length > 0 ? (
+          Lo.map((user) => {
+            return <Users user={user} key={user.id} />;
+          })
+        ) : (
+          <p className="text-danger h5">
+            There are no users belonging to this department!
+          </p>
+        )}
+      </div>
     </div>
   );
 };
 
 const mapStateToProps = (state) => {
   return {
-    users: state,
+    users: state.users,
   };
 };
 
