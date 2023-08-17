@@ -11,6 +11,8 @@ import Create from "./Create";
 import UserDetails from "./UserDetails";
 import Edit from "./Edit";
 import SearchResult from "./SearchResult";
+import CreateEvent from "./CreateEvent";
+import SeeEvent from "./SeeEvent";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -41,6 +43,16 @@ const App = () => {
         {
           path: "/events",
           element: <Events />,
+          children: [
+            {
+              path: "create",
+              element: <CreateEvent />,
+            },
+            {
+              path: "see",
+              element: <SeeEvent />,
+            },
+          ],
         },
         {
           path: "/departments",

@@ -1,0 +1,43 @@
+.create form {
+  margin-top: 20px;
+}
+
+.create form div {
+  margin-bottom: 30px;
+}
+
+form input,
+form textarea,
+form label {
+  display: block;
+}
+
+form label {
+  margin-bottom: 5px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 6px;
+  margin-bottom: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 19px;
+  background-color: #c77fc1f1;
+}
+
+form button {
+  border: none;
+  padding: 12px 0;
+  border-radius: 8px;
+  color: #fff;
+  background-color: var(--secondary);
+  cursor: pointer;
+  font-size: 18px;
+  width: 100%;
+}
+
+form button:hover {
+  transform: scale(0.99, 0.99);
+}

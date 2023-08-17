@@ -1,0 +1,21 @@
+.titleEvent {
+  color: rgb(202, 190, 190);
+  font-size: 22px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin-bottom: 20px;
+}
+
+.eventContainer nav {
+  margin-bottom: 20px;
+}
+
+.eventContainer nav a {
+  padding: 6px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  border: 2px solid #fff;
+}
+
+.eventContainer nav a.active {
+  background-color: var(--secondary);
+}
