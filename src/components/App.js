@@ -10,6 +10,7 @@ import NotFound from "./NotFound";
 import Create from "./Create";
 import UserDetails from "./UserDetails";
 import Edit from "./Edit";
+import SearchResult from "./SearchResult";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -52,6 +53,10 @@ const App = () => {
         {
           path: "/departments/:id",
           element: <UserDetails />,
+        },
+        {
+          path: "/search",
+          element: <SearchResult />,
         },
         {
           path: "*",

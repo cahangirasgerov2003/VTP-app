@@ -3,15 +3,19 @@ import "./members.css";
 import React from "react";
 import Users from "./Users";
 import { connect } from "react-redux";
+import Search from "./Search";
 
 const Members = (props) => {
   return (
     <div>
       <div className="d-flex justify-content-between align-items-center">
         <h1>Members :</h1>
-        <Link to="create" className="addUser">
-          Add New User
-        </Link>
+        <div className="d-flex align-items-center">
+          <Search />
+          <Link to="create" className="addUser ms-4">
+            Add New User
+          </Link>
+        </div>
       </div>
       <p className="h5">
         VTP 23 participants, good luck to all of you &#129488;
