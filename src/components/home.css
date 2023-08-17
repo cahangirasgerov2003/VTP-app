@@ -1,0 +1,19 @@
+.progressTitle {
+  color: rgb(92, 212, 92);
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.progressBar {
+  margin-top: 16px;
+}
+.tableTitle {
+  margin: 20px 0 8px 0;
+}
+.tableContainer {
+  margin-top: 16px;
+}
+.departmentsTitle {
+  color: rgb(0, 255, 179);
+  font-size: 24px;
+}
